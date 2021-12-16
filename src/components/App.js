@@ -11,6 +11,7 @@ import { Helmet } from 'react-helmet';
 import { ThemeProvider } from 'styled-components';
 import FontFace from '@Global/components/FontFace';
 import SmoothReset from '@Global/components/SmoothReset';
+import MfHeader from '@Components/MfHeader';
 
 const App = () => {
   return (
@@ -25,7 +26,7 @@ const App = () => {
       <FontFace />
       <ThemeProvider theme={theme}>
         <SmoothReset />
-        <h1>Novo projeto React</h1>
+        <MfHeader />
       </ThemeProvider>
     </>
   );
