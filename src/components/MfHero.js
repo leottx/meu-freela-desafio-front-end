@@ -4,6 +4,7 @@ import styled from 'styled-components';
 // COMPONENTES
 import Wrapper from '@Components/Wrapper';
 import Button from '@Components/Button';
+import { darken } from 'polished';
 
 const MfHeroStyled = styled.section`
   background: ${() => `url(${require('@Images/hero-bg.jpg').default})`};
@@ -28,11 +29,12 @@ const MfHeroStyled = styled.section`
     min-height: calc(100vh - 8rem);
     align-items: center;
     > div {
+      padding: 4.8rem clamp(2.4rem, 6vw, 6rem);
       display: flex;
       gap: 3rem;
       flex-direction: column;
       width: 100%;
-      padding: 4.8rem 2.4rem;
+      /* padding: 4.8rem 2.4rem; */
     }
     h1 {
       color: ${({ theme: { c } }) => c.white};
@@ -53,11 +55,10 @@ const MfHeroStyled = styled.section`
   }
   button {
     align-self: flex-start;
-    font-size: clamp(1.8rem, 3.6vw, 2rem);
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms;
+    font-size: clamp(1.8rem, 3.6vw, 2.2rem);
+    padding: ${1.6 / 2.2}em ${5.2 / 2.2}em;
     &:hover {
-      background-color: ${({ theme: { c } }) => c.redDark};
+      background-color: ${({ theme: { c } }) => darken(0.1, c.red)};
     }
   }
 `;
