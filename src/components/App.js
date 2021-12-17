@@ -13,6 +13,7 @@ import FontFace from '@Global/components/FontFace';
 import SmoothReset from '@Global/components/SmoothReset';
 import MfHeader from '@Components/MfHeader';
 import MfHero from '@Components/MfHero';
+import MfAbout from '@Components/MfAbout';
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
         <MfHeader />
         <main>
           <MfHero />
+          <MfAbout />
         </main>
       </ThemeProvider>
     </>
