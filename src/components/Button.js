@@ -2,11 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Button = styled.button`
-  padding: ${1.6 / 2.2}em ${5.2 / 2.2}em;
   font-size: 2.2rem;
   border-radius: 0.8rem;
   background: ${({ theme: { c } }) => c.red};
   color: ${({ theme: { c } }) => c.white};
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 `;
 
 export default Button;
