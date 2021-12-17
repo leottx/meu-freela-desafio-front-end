@@ -24,6 +24,7 @@ const MfHeaderStyled = styled.header`
     font-weight: 700;
     height: 8rem;
     color: ${({ theme: { c } }) => c.white};
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   }
   h1 {
     font-weight: 700;
