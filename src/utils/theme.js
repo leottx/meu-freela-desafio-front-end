@@ -10,11 +10,6 @@ const theme = {
     white: '#FFFFFF',
     black: '#000000',
   },
-  // FONTES TAMANHO
-  fs: [1.4, 1.8, 2.2, 3, 5, 8],
-  fsBase: 62.5,
-  // ESPACAMENTO
-  s: [1.6, 2.4, 3, 5.2, 6.2],
 };
 
 export default theme;

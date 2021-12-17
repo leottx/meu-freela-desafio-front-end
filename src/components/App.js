@@ -12,6 +12,7 @@ import { ThemeProvider } from 'styled-components';
 import FontFace from '@Global/components/FontFace';
 import SmoothReset from '@Global/components/SmoothReset';
 import MfHeader from '@Components/MfHeader';
+import MfHero from '@Components/MfHero';
 
 const App = () => {
   return (
@@ -27,6 +28,9 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <SmoothReset />
         <MfHeader />
+        <main>
+          <MfHero />
+        </main>
       </ThemeProvider>
     </>
   );

@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const SmoothReset = createGlobalStyle`
   html {
-    font-size: ${({ theme }) => `${theme.fsBase}%`};
+    font-size: 62.5%;
   }
   *,
   *::before,

@@ -5,21 +5,32 @@ import styled from 'styled-components';
 import { FaLinkedinIn, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 // COMPONENTES
+import Wrapper from '@Components/Wrapper';
+
 const MfHeaderStyled = styled.header`
   background: ${({ theme: { c } }) =>
     `linear-gradient(180deg, ${c.redDark} 0%, ${c.red} 100%);`};
-  padding: ${({ theme: { s } }) => `${s[0]}rem ${s[1]}rem`};
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: ${({ theme: { fs } }) => `${fs[2]}rem`};
-  color: ${({ theme: { c } }) => c.white};
+  position: sticky;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  top: 0;
+  > div {
+    padding: 0 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 3rem;
+    font-weight: 700;
+    height: 8rem;
+    color: ${({ theme: { c } }) => c.white};
+  }
   h1 {
     font-weight: 700;
   }
   ul {
     display: flex;
-    gap: ${({ theme: { s } }) => `${s[0]}rem`};
+    gap: 1.6rem;
     li {
       display: block;
     }
@@ -36,26 +47,26 @@ const MfHeaderStyled = styled.header`
 const MfHeader = () => {
   return (
     <MfHeaderStyled>
-      <h1>
+      <Wrapper>
         <a href='#'>MeuFreela</a>
-      </h1>
-      <ul>
-        <li>
-          <a href='https://linkedin.com'>
-            <FaLinkedinIn size={24} />
-          </a>
-        </li>
-        <li>
-          <a href='https://instagram.com'>
-            <FaInstagram size={24} />
-          </a>
-        </li>
-        <li>
-          <a href='https://twitter.com'>
-            <FaTwitter size={24} />
-          </a>
-        </li>
-      </ul>
+        <ul>
+          <li>
+            <a href='https://linkedin.com'>
+              <FaLinkedinIn size={32} />
+            </a>
+          </li>
+          <li>
+            <a href='https://instagram.com'>
+              <FaInstagram size={32} />
+            </a>
+          </li>
+          <li>
+            <a href='https://twitter.com'>
+              <FaTwitter size={32} />
+            </a>
+          </li>
+        </ul>
+      </Wrapper>
     </MfHeaderStyled>
   );
 };
