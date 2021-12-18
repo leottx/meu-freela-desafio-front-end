@@ -7,15 +7,16 @@ import ThinkingMan from '@Images/thinking-man.png';
 
 // COMPONENTS
 import WrapperMain from '@Components/WrapperMain';
+import { SectionTitle, SectionText } from './SectionText';
 
 const MfAboutStyled = styled.section`
-  background: ${({ theme: { c } }) => c.white};
+  background: ${({ theme: { c } }) => c.grayLightest};
   color: ${({ theme: { c } }) => c.grayDark};
   position: relative;
   &::before {
     content: '';
     height: 120px;
-    background: ${({ theme: { c } }) => c.grayLight};
+    background: ${({ theme: { c } }) => c.grayLighter};
     bottom: 0;
     position: absolute;
     left: 0;
@@ -40,13 +41,9 @@ const MfAboutStyled = styled.section`
     }
   }
   h2 {
-    font-size: 5.2rem;
-    font-weight: 700;
     margin-bottom: 4rem;
   }
   p {
-    font-size: 2.2rem;
-    line-height: 1.5;
     margin-bottom: 12rem;
   }
 `;
@@ -56,13 +53,13 @@ const MfAbout = () => {
     <MfAboutStyled>
       <WrapperMain>
         <div>
-          <h2>Nossa iniciativa</h2>
-          <p>
+          <SectionTitle>Nossa iniciativa</SectionTitle>
+          <SectionText>
             Somos desenvolvedores que se dedicam a fazer projetos perfeitos e
             entregar valor para todos os seus clientes. Gostamos de ver clientes
             satisfeitos com projetos feitos com carinho, atenção e qualidade
             altíssima.
-          </p>
+          </SectionText>
         </div>
         <div>
           <img src={ThinkingMan} alt='Homem segurando o queixo pensativo' />
