@@ -14,6 +14,7 @@ import SmoothReset from '@Global/components/SmoothReset';
 import MfHeader from '@Components/MfHeader';
 import MfHero from '@Components/MfHero';
 import MfAbout from '@Components/MfAbout';
+import MfContact from '@Components/MfContact';
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
         <main>
           <MfHero />
           <MfAbout />
+          <MfContact />
         </main>
       </ThemeProvider>
     </>
