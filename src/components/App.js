@@ -15,6 +15,7 @@ import MfHeader from '@Components/MfHeader';
 import MfHero from '@Components/MfHero';
 import MfAbout from '@Components/MfAbout';
 import MfContact from '@Components/MfContact';
+import MfFooter from '@Components/MfFooter';
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
           <MfHero />
           <MfAbout />
           <MfContact />
+          <MfFooter />
         </main>
       </ThemeProvider>
     </>
