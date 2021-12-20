@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// COMPONENTES
 const Button = styled.button`
   font-size: 2.2rem;
   border-radius: 0.8rem;

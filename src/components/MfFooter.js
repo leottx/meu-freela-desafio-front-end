@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// COMPONENTES
 const MfFooterStyled = styled.footer`
   background: ${({ theme: { c } }) => c.grayLighter};
   padding: 3rem 2.4rem;
