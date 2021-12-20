@@ -1,11 +1,10 @@
 import React from 'react';
-
 import styled from 'styled-components';
 
 // IMAGENS
 import ThinkingMan from '@Images/thinking-man.png';
 
-// COMPONENTS
+// COMPONENTES
 import WrapperMain from '@Components/WrapperMain';
 import { SectionTitle, SectionText } from './SectionText';
 
@@ -25,15 +24,15 @@ const MfAboutStyled = styled.section`
   }
   > div {
     display: flex;
-    gap: 7rem;
-    padding: 2.4rem 2.4rem 0;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 0rem 2.4rem;
     > div:first-child {
-      width: 60%;
-      margin-top: 6rem;
+      margin-top: 3.6rem;
     }
     > div:last-child {
-      width: auto;
-      align-self: flex-end;
+      max-width: 350px;
+      margin-left: auto;
       img {
         width: 100%;
         display: block;
@@ -41,10 +40,29 @@ const MfAboutStyled = styled.section`
     }
   }
   h2 {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
-  p {
-    margin-bottom: 12rem;
+
+  @media only screen and (min-width: 768px) {
+    > div {
+      flex-direction: row;
+      gap: 7rem;
+      padding: 3rem 2.4rem 0;
+      > div:first-child {
+        width: 60%;
+        margin-top: 6rem;
+      }
+      > div:last-child {
+        max-width: initial;
+        align-self: flex-end;
+      }
+    }
+    h2 {
+      margin-bottom: 4rem;
+    }
+    p {
+      margin-bottom: 12rem;
+    }
   }
 `;
 
