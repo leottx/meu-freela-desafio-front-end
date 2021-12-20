@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// UTILIDADES
+import { darken } from 'polished';
+
 // COMPONENTES
 import Wrapper from '@Components/Wrapper';
 import Button from '@Components/Button';
-import { darken } from 'polished';
 
 const MfHeroStyled = styled.section`
   background: ${() => `url(${require('@Images/hero-bg.jpg').default})`};
@@ -26,30 +28,24 @@ const MfHeroStyled = styled.section`
   }
   > div {
     display: flex;
-    min-height: calc(100vh - 8rem);
+    min-height: calc(100vh - 60px);
     align-items: center;
     > div {
-      padding: 4.8rem clamp(2.4rem, 6vw, 6rem);
+      color: ${({ theme: { c } }) => c.white};
+      padding: 4.8rem 2.4rem;
       display: flex;
-      gap: 3rem;
+      gap: 0.6rem;
       flex-direction: column;
       width: 100%;
-      /* padding: 4.8rem 2.4rem; */
+      > span {
+        font-size: clamp(2rem, 3vw, 2.4rem);
+      }
     }
     h1 {
-      color: ${({ theme: { c } }) => c.white};
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
+      margin-bottom: 3rem;
       span {
-        display: block;
-        &:first-of-type {
-          font-size: clamp(1.6rem, 4.8vw, 2.4rem);
-        }
-        &:last-of-type {
-          font-weight: 700;
-          font-size: clamp(4.2rem, 9vw, 8rem);
-        }
+        font-size: clamp(5.2rem, 9vw, 8rem);
+        font-weight: 700;
       }
     }
   }
@@ -61,6 +57,21 @@ const MfHeroStyled = styled.section`
       background-color: ${({ theme: { c } }) => darken(0.1, c.red)};
     }
   }
+  @media only screen and (min-width: 768px) {
+    min-height: calc(100vh - 80px);
+    h1 {
+      span {
+        display: block;
+      }
+    }
+  }
+  @media only screen and (min-width: 1280px) {
+    > div {
+      > div {
+        padding-left: 6rem;
+      }
+    }
+  }
 `;
 
 const MfHero = () => {
@@ -68,11 +79,10 @@ const MfHero = () => {
     <MfHeroStyled>
       <div>
         <Wrapper>
+          <span>Desenvolvedores prontos para ação</span>
           <h1>
-            <span>Desenvolvedores prontos para ação</span>
-            <span>
-              Seu projeto pronto <br></br> na velocidade da luz
-            </span>
+            <span>Seu projeto pronto </span>
+            <span>na velocidade da luz</span>
           </h1>
           <Button>Peça uma reunião</Button>
         </Wrapper>
