@@ -21,19 +21,20 @@ const MfHeaderStyled = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    font-size: 3rem;
     font-weight: 700;
-    height: 8rem;
+    height: 6.4rem;
     color: ${({ theme: { c } }) => c.white};
-  }
-  h1 {
-    font-weight: 700;
   }
   ul {
     display: flex;
     gap: 1.6rem;
     li {
       display: block;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms;
+      &:hover {
+        transform: scale(1.15);
+      }
     }
     svg {
       display: block;
@@ -41,7 +42,29 @@ const MfHeaderStyled = styled.header`
     }
   }
   a {
+    font-size: 2.4rem;
     color: inherit;
+  }
+
+  li {
+    a {
+      font-size: 2.7rem;
+    }
+  }
+
+  @media only screen and (min-width: 768px) {
+    > div {
+      font-size: 3rem;
+      height: 8rem;
+    }
+    a {
+      font-size: 3rem;
+    }
+    li {
+      a {
+        font-size: 3rem;
+      }
+    }
   }
 `;
 
@@ -53,17 +76,17 @@ const MfHeader = () => {
         <ul>
           <li>
             <a href='https://linkedin.com'>
-              <FaLinkedinIn size={32} />
+              <FaLinkedinIn />
             </a>
           </li>
           <li>
             <a href='https://instagram.com'>
-              <FaInstagram size={32} />
+              <FaInstagram />
             </a>
           </li>
           <li>
             <a href='https://twitter.com'>
-              <FaTwitter size={32} />
+              <FaTwitter />
             </a>
           </li>
         </ul>
