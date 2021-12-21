@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 // UTILIDADES
 import { lighten } from 'polished';
+import { ACTIONS, reducerFn } from '@Utils/formValidation.js';
 
 // COMPONENTES
 import WrapperMain from '@Components/WrapperMain';
@@ -76,21 +77,56 @@ const MfAboutStyled = styled.section`
 `;
 
 const MfContact = () => {
+  const [formState, dispatchFormState] = useReducer(reducerFn, {
+    name: '',
+    phone: '',
+    isNameValid: false,
+    isPhoneValid: false,
+  });
+
+  const formChangeHandler = (value, type) => {
+    if (typeof value === 'undefined') {
+      dispatchFormState({ type: type });
+      return;
+    }
+
+    dispatchFormState({ type: type, val: value });
+  };
+
   return (
-    <MfAboutStyled>
+    <MfAboutStyled id='contact'>
       <WrapperMain>
         <SectionTitle>Mande um oi, ligamos para você!</SectionTitle>
         <SectionText>
           Preencha seus dados para que a gente possa entrar em contato.
         </SectionText>
-        <form>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            formChangeHandler(undefined, ACTIONS.CHANGE_FORM_STATUS);
+          }}
+        >
           <div>
             <label>Nome Completo</label>
-            <ContactField placeholder='Ex: Mateus Ávila Isidoro' />
+            <ContactField
+              placeholder='Ex: Mateus Ávila Isidoro'
+              onChange={(e) =>
+                formChangeHandler(e.target.value, ACTIONS.CHANGE_NAME)
+              }
+              isThisValid={formState.isNameValid}
+              isFormValid={formState.isFormValid}
+            />
           </div>
           <div>
             <label>Whatsapp</label>
-            <ContactField placeholder='(99) 99999-9999' />
+            <ContactField
+              placeholder='(99) 99999-9999'
+              onChange={(e) =>
+                formChangeHandler(e.target.value, ACTIONS.CHANGE_PHONE)
+              }
+              isThisValid={formState.isPhoneValid}
+              isFormValid={formState.isFormValid}
+            />
           </div>
           <Button>Peça uma reunião</Button>
         </form>

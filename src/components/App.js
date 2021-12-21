@@ -4,7 +4,7 @@ import React from 'react';
 import favicon from '@Images/favicon.png';
 
 // UTILIDADES
-import theme from '@Utils/theme.js';
+import theme from '@Global/variables/theme.js';
 
 // COMPONENTES
 import { Helmet } from 'react-helmet';
