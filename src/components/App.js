@@ -4,7 +4,7 @@ import React from 'react';
 import favicon from '@Images/favicon.png';
 
 // UTILIDADES
-import theme from '@Utils/theme.js';
+import theme from '@Global/variables/theme.js';
 
 // COMPONENTES
 import { Helmet } from 'react-helmet';
@@ -12,6 +12,10 @@ import { ThemeProvider } from 'styled-components';
 import FontFace from '@Global/components/FontFace';
 import SmoothReset from '@Global/components/SmoothReset';
 import MfHeader from '@Components/MfHeader';
+import MfHero from '@Components/MfHero';
+import MfAbout from '@Components/MfAbout';
+import MfContact from '@Components/MfContact';
+import MfFooter from '@Components/MfFooter';
 
 const App = () => {
   return (
@@ -27,6 +31,12 @@ const App = () => {
       <ThemeProvider theme={theme}>
         <SmoothReset />
         <MfHeader />
+        <main>
+          <MfHero />
+          <MfAbout />
+          <MfContact />
+          <MfFooter />
+        </main>
       </ThemeProvider>
     </>
   );
