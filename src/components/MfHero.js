@@ -6,7 +6,6 @@ import { darken } from 'polished';
 
 // COMPONENTES
 import Wrapper from '@Components/Wrapper';
-import Button from '@Components/Button';
 
 const MfHeroStyled = styled.section`
   background: ${() => `url(${require('@Images/hero-bg.jpg').default})`};
@@ -49,14 +48,6 @@ const MfHeroStyled = styled.section`
       }
     }
   }
-  button {
-    align-self: flex-start;
-    font-size: clamp(1.8rem, 3.6vw, 2.2rem);
-    padding: ${1.6 / 2.2}em ${5.2 / 2.2}em;
-    &:hover {
-      background-color: ${({ theme: { c } }) => darken(0.1, c.red)};
-    }
-  }
   @media only screen and (min-width: 768px) {
     min-height: calc(100vh - 80px);
     h1 {
@@ -74,6 +65,20 @@ const MfHeroStyled = styled.section`
   }
 `;
 
+const MeetingLink = styled.a`
+  border-radius: 0.8rem;
+  background: ${({ theme: { c } }) => c.red};
+  color: ${({ theme: { c } }) => c.white};
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  align-self: flex-start;
+  font-size: clamp(1.8rem, 3.6vw, 2.2rem);
+  padding: ${1.6 / 2.2}em ${5.2 / 2.2}em;
+  &:hover {
+    background-color: ${({ theme: { c } }) => darken(0.1, c.red)};
+  }
+`;
+
 const MfHero = () => {
   return (
     <MfHeroStyled>
@@ -84,7 +89,7 @@ const MfHero = () => {
             <span>Seu projeto pronto </span>
             <span>na velocidade da luz</span>
           </h1>
-          <Button>Peça uma reunião</Button>
+          <MeetingLink href='#contact'>Peça uma reunião</MeetingLink>
         </Wrapper>
       </div>
     </MfHeroStyled>
