@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "description": "Desafio criado com React JS",
   "main": "index.js",
+  "homepage": "https://leottx.github.io/meu-freela-desafio-front-end/",
   "scripts": {
     "commit": "cz",
     "start": "webpack serve --config ./webpack.dev.js",
-    "build": "webpack --config ./webpack.prod.js"
+    "build": "webpack --config ./webpack.prod.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "babel": {
     "presets": [
@@ -23,7 +26,6 @@
   "bugs": {
     "url": "https://github.com/leottx/challenge-front-end/issues"
   },
-  "homepage": "https://github.com/leottx/challenge-front-end#readme",
   "devDependencies": {
     "@babel/core": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
